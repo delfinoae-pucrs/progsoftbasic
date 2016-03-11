@@ -1,11 +1,23 @@
 #include <stdio.h>
 
+float tempInCelsiusFromFahrenheit(float tempFahrenheit);
+
 int main()
 {
-  int valor1, valor2;
-  printf("Digite os dois valores: ");
-  scanf("%d %d", &valor1, &valor2);
-  printf("Você digitou: %d e %d\n", valor1, valor2);
+    float tempFahrenheit, tempCelsius;
 
-  return 0;
+    printf("Informe a temperatura em Fahrenheit: ");
+    scanf("%f", &tempFahrenheit);
+
+    tempCelsius = tempInCelsiusFromFahrenheit(tempFahrenheit);
+
+    printf("Temperatura em Celsius: %.1f C\n", tempCelsius);
+
+    return 0;
+}
+
+float tempInCelsiusFromFahrenheit(float tempFahrenheit)
+{
+    float temp = ( 5.0 / 9.0 ) * (tempFahrenheit - 32);
+    return temp;
 }
